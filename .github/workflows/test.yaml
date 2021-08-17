@@ -26,4 +26,4 @@ jobs:
             - name: Log
               run: echo "hello world ${{ github.event.inputs.environment }} "
             - name: Log payload
-              run: echo "${{ github.event.client_payload }}"
+              run: echo "${{ github.event.client_payload.environment }}"
