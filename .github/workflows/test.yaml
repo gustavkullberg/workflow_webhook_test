@@ -10,6 +10,11 @@ on:
     repository_dispatch:
         types: 
           - trigger-e2e-run
+        inputs:
+            environment:
+                description: "Environment to run in"
+                required: false
+                default: "qa"
 
 jobs:
     build:
@@ -19,4 +24,4 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
             - name: Log
-              run: echo "hello world"
+              run: echo "hello world ${{ github.event.inputs.environment }}"
