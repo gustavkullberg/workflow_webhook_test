@@ -14,7 +14,7 @@ on:
             environment:
                 description: "Environment to run in"
                 required: false
-                default: "qa"
+                default: ${{ github.event.client_payload.environment }}
 
 jobs:
     build:
