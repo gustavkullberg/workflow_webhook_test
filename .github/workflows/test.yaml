@@ -1,0 +1,22 @@
+name: Webhook test
+
+on:
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: "Environment to run in"
+                required: true
+                default: "qa"
+    repository_dispatch:
+        types: 
+          - trigger-e2e-run
+
+jobs:
+    build:
+        runs-on: [ubuntu-latest]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Log
+              run: echo "hello world"
