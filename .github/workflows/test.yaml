@@ -24,4 +24,6 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
             - name: Log
-              run: echo "hello world ${{ github.event.inputs.environment }}"
+              run: echo "hello world ${{ github.event.inputs.environment }} "
+            - name: Log payload
+              run: echo "${{ github.event.client_payload }}"
