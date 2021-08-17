@@ -10,11 +10,6 @@ on:
     repository_dispatch:
         types: 
           - trigger-e2e-run
-        inputs:
-            environment:
-                description: "Environment to run in"
-                required: false
-                default: ${{ github.event.client_payload.environment }}
 
 jobs:
     build:
